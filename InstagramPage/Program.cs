@@ -12,8 +12,21 @@ namespace MyGrem
         static void Main()
 
         {
+
             string mySelection = "";
             List<Users> userList = new List<Users>();
+            userList.Add(new Users("rosewell1151"));
+            userList.Add(new Users("electro70"));
+            userList.Add(new Users("maxjonson"));
+            userList.Add(new Users("kevinhurt"));
+            userList.Add(new Users("Pure41"));
+            userList.Add(new Users("ipsec"));
+            userList.Add(new Users("floydmoney"));
+            userList.Add(new Users("rose"));
+            userList.Add(new Users("admin"));
+            userList.Add(new Users("zero01"));
+
+
             List<Comments> CommentList = new List<Comments>();
 
 
@@ -63,7 +76,7 @@ namespace MyGrem
                     case "3":
                         Console.WriteLine("Current User List: ");
 
-                        foreach (var myUser in userList)
+                        foreach (Users myUser in userList)
                         {
                             userList.Add(myUser);
                             Console.WriteLine("Email: " + myUser.Email);
