@@ -213,12 +213,13 @@ namespace MyGrem
 
             }
 
-            catch (Exception e)
+            catch (Exception error)
 
             {
 
-                Console.WriteLine(e.Message + "User Does Not Exist");
+                Console.WriteLine(error.Message + "User Does Not Exist");
             }
-}
+        }
+
     }
 }
