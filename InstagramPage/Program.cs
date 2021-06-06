@@ -13,6 +13,12 @@ namespace MyGrem
         static void Main()
 
         {
+
+            NewClass<int> newClass = new NewClass<int>();
+            newClass.Genericproperty = 23;
+            newClass.NormalProperty = "Jordan";
+            Console.WriteLine(newClass.NormalProperty + " Known as: " + newClass.Genericproperty);
+
             try
             {
 
@@ -113,11 +119,20 @@ namespace MyGrem
 
 
 
-                List<Users> result = userList.Where(user => user.Role == 1).ToList();
-                foreach (var user in result)
+                List<Users> result = userList.Where(user => user.UserId >= 10).ToList(); // 0 = admin  and 1 = non-admin
+
+                if(result.Count == 0)
                 {
-                    Console.WriteLine(user.UserName);
-                    Console.WriteLine(user.CommentData);
+
+                    throw new UserNotFound("ADMIN NOT FOUND");
+                }
+                else
+                {
+                    foreach (var user in result)
+                    {
+                        Console.WriteLine(user.UserName);
+                        Console.WriteLine(user.CommentData);
+                    }
                 }
 
 
@@ -213,13 +228,23 @@ namespace MyGrem
 
             }
 
-            catch (Exception error)
+            catch (UserNotFound exception)
 
             {
 
-                Console.WriteLine(error.Message + "User Does Not Exist");
+                Console.WriteLine(exception.Message);
             }
+            finally
+            {
+                Console.WriteLine("My Grem Has Ended!");
+            }
+           
         }
 
     }
+}
+public class NewClass<T>
+{
+    public string NormalProperty { get; set; }
+    public T Genericproperty { get; set; }
 }
