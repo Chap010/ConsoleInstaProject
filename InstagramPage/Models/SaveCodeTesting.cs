@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using InstagramPage;
-using InstagramPage.Models;
+
+// save code//
 
 
 
-namespace MyGrem
-{
-    class Program
-    {
-        static void Main()
+/*
+ static void Main()
 
         {
+
             NewClass<int> newClass = new NewClass<int>();
             newClass.Genericproperty = 23;
             newClass.NormalProperty = "Jordan";
@@ -20,6 +16,9 @@ namespace MyGrem
 
             try
             {
+
+
+
                 string mySelection = "";
 
                 List<Users> userList = new List<Users>();
@@ -111,64 +110,154 @@ namespace MyGrem
                 mytenUser.Email = "zero01@grem.com";
                 mytenUser.CommentData = ":)";
                 mytenUser.Password = "Ilovemydog123";
-                mytenUser.Role = 1;                                                     // Role 0 = admin and 1 = non-admin
+                mytenUser.Role = 1;
 
 
 
-                List<Users> result = userList.Where(user => user.UserId <= 10).ToList();
+                List<Users> result = userList.Where(user => user.UserId >= 10).ToList(); // Role 0 = admin and 1 = non-admin
 
-                if (result.Count == 0)
+                if (result.Count > 0)
                 {
-                    // Console.WriteLine("User Admin Not Found");
-                    //string myformating = "User Properties:" + "Email: {0}, UserId: {1}, Password: {2}, UsernName:{3}, UserRole: {4}";
-                    throw new MyUSerDefinedException("ADMIN USER NOT FOUND");
+                    Console.WriteLine("User Found");
+                    string myformating = "User Properties:" + "Email: {0}, UserId: {1}, Password: {2}, UsernName:{3}, UserRole: {4}";
+                    throw new MyUSerDefinedException("ADMIN NOT FOUND");
                 }
+
+
+                for (int i = 0; i < result.Count; i++)
+
+                {
+                    Users user = result[i];
+                    Console.WriteLine(user.Email, user.UserId, user.Password, user.UserName, user.Role);
+                }
+
 
                 else
+
                 {
-                    for (int i = 0; i < result.Count; i++)
-
-                    {
-                        Users myUser = userList[i];
-                        userList.Add(myUser);
-                        Console.WriteLine("Email: " + myUser.Email);
-                        Console.WriteLine("HashPass: " + myUser.Password);
-                        Console.WriteLine("ID: " + myUser.UserId);
-                        Console.WriteLine("Username: " + myUser.UserName);
-                        Console.WriteLine("Role:" + myUser.Role);
-                    }
-
-
+                    throw new MyUSerDefinedException("ADMIN NOT FOUND");
                 }
-            }
 
 
-            catch (MyUSerDefinedException exeption)
-            {
-                Console.WriteLine(exeption.Message);
+                List<Comments> CommentList = new List<Comments>();
+
+
+
+                /*  
+                            10 Users
+                userList.Add(new Users("rosewell1151"));
+                userList.Add(new Users("electro70"));
+                userList.Add(new Users("maxjonson"));
+                userList.Add(new Users("kevinhurt"));
+                userList.Add(new Users("Pure41"));
+                userList.Add(new Users("ipsec"));
+                userList.Add(new Users("floydmoney"));
+                userList.Add(new Users("rose"));
+                userList.Add(new Users("mohamedraj"));
+                userList.Add(new Users("zero01"));
+
+                
+
+while (mySelection != "5")
+{
+Console.WriteLine("Select 1: User Registration ");
+Console.WriteLine("Select 2: To Create a Comment ");
+Console.WriteLine("Select 3: Print User List ");
+Console.WriteLine("Select 4: Print Comment List");
+Console.WriteLine("Select 5: To Exit ");
+
+Console.WriteLine("");
+Console.WriteLine("SELECT ONLY WITH NUMBERS");
+
+mySelection = Console.ReadLine();
+
+
+
+switch (mySelection)
+{
+case "1":
+Users myuser = new Users();
+userList.Add(myuser);
+myuser.Email = "chicharones@rtx.com";
+myuser.Password = "bochito2351";
+myuser.UserId = 1;
+myuser.UserName = "rosewell51";
+
+Console.WriteLine("You Created A Username!");
+break;
+
+
+case "2":
+
+
+Comments myComment = new Comments();
+CommentList.Add(myComment);
+myComment.CommentID = 1;
+myComment.CommentData = "Hey Bro";
+
+Console.WriteLine("You Created A Comment hoorah!");
+
+break;
+
+
+case "3":
+Console.WriteLine("Current User List: ");
+
+foreach (Users myUser in userList)
+{
+userList.Add(myUser);
+Console.WriteLine("Email: " + myUser.Email);
+Console.WriteLine("HashPass: " + myUser.Password);
+Console.WriteLine("ID: " + myUser.UserId);
+Console.WriteLine("Username: " + myUser.UserName);
+
+
+}
+break;
+
+case "4":
+Console.WriteLine("Current Comments List: ");
+
+foreach (var InsideComment in CommentList)
+{
+Console.WriteLine("CommentID: " + InsideComment.CommentID);
+Console.WriteLine("Data: " + InsideComment.CommentData);
+
+}
+break;
+}
+
+}
+
             }
-            finally
-            {
-                Console.WriteLine("Grem has Ended");
-            }
+
+            catch (MyUSerDefinedException exception)
+
+{
+
+Console.WriteLine(exception.Message);
+}
+finally
+{
+Console.WriteLine("My Grem Has Ended!");
+}
+           
         }
 
-
-        public class NewClass<T>
-        {
-            public string NormalProperty { get; set; }
-            public T Genericproperty { get; set; }
-        }
-
-
-        public class MyUSerDefinedException : Exception
-        {
-            public MyUSerDefinedException(string errorMessage) : base(errorMessage)
-            {
-
-            }
-
-
-        }
     }
 }
+public class NewClass<T>
+{
+    public string NormalProperty { get; set; }
+    public T Genericproperty { get; set; }
+}
+
+
+public class MyUSerDefinedException : Exception
+{
+    public MyUSerDefinedException(string errorMessage) : base(errorMessage)
+    {
+
+    }
+}
+*/
