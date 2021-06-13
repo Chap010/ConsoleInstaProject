@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using InstagramPage;
 using InstagramPage.Models;
-
-
+using static MyGrem.Program.MyUSerDefinedException;
 
 namespace MyGrem
 {
@@ -17,6 +16,15 @@ namespace MyGrem
             newClass.Genericproperty = 23;
             newClass.NormalProperty = "Jordan";
             Console.WriteLine(newClass.NormalProperty + " Known as: " + newClass.Genericproperty);
+
+            Console.WriteLine("");
+
+            NormalClass myclase = new NormalClass();
+            myclase.Something<int>(777, 999);            // normal generic method
+
+
+
+
 
             try
             {
@@ -168,7 +176,17 @@ namespace MyGrem
 
             }
 
+            public class NormalClass
+            {
+                public void Something<T>(int parametro1, T parametro2)
+                    {
+                    Console.WriteLine("Parametes Values: ");
+                    Console.WriteLine(parametro1);
+                    Console.WriteLine(parametro2);
 
+                }
+            }
         }
+
     }
 }
