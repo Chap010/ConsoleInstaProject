@@ -12,6 +12,7 @@ namespace InstagramPage
         // public string Post { get; internal set;} // delete after not useful
         public string CommentData { get; set; }
         public string Password { get; set; }
+        public int CommentId { get; internal set; }
         private string HashPassword { get; set; }
 
 

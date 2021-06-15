@@ -7,10 +7,8 @@ namespace InstagramPage.Models
         {
         }
 
-        public int CommentID { get; set; }
+        public int UserId { get; set; }
         public string CommentData { get; set; }
-
-
-
+        public int CommentId { get; internal set; }
     }
 }
